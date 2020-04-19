@@ -316,6 +316,17 @@
 <script src="js/parallax.min.js"></script>
 <script src="js/ekko-lightbox.min.js"></script>
 <script src="scripts/main.js"></script>
+<script>
+	jQuery.noConflict();
+	jQuery( document ).ready( function( $ ) {
+		// Top Button
+			$( window ).scroll( function() {
+				if ( $( this ).scrollTop() > 200 ) { $( '.bottom_right' ).fadeIn(); }
+				else { $( '.bottom_right' ).fadeOut(); }
+			} );
+			$( '.bottom_right' ).click( function() { $( 'html, body' ).animate( { scrollTop : 0 }, 600 ); return false; } );
+	} );
+</script>
 
 <div class="bottom_right"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true" id="go-to-top"></i>
 </div>
